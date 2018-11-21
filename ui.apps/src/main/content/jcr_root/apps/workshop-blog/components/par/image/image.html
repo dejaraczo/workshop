@@ -1,3 +1,4 @@
-<a href="#">
-    <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
+<a href="${properties.link_path @ extension='html'}">
+    <img class="img-fluid" src="${properties.fileReference}" alt="${properties.link_label}">
 </a>
+<span class="caption text-muted">${properties.caption}</span>

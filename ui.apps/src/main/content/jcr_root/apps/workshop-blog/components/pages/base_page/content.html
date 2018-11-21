@@ -1,10 +1,17 @@
-<!-- Main Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+
             <div data-sly-resource="${'./par' @ resourceType='wcm/foundation/components/parsys'}"></div>
+            <div data-sly-resource="${'./text' @ resourceType='workshop-blog/components/par/text'}"></div>
+            <div data-sly-resource="${'./image' @ resourceType='workshop-blog/components/par/image'}"></div>
+            <div data-sly-resource="${'./contactform' @ resourceType='workshop-blog/components/par/contactform'}"></div>
+
+            <hr>
+            <!-- Pager -->
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div>
         </div>
     </div>
 </div>
-
-

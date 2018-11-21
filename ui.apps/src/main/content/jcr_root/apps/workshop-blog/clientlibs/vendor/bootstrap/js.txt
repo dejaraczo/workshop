@@ -1,3 +1,4 @@
 #base=js
 
 bootstrap.bundle.js
+jqBootstrapValidation.js
