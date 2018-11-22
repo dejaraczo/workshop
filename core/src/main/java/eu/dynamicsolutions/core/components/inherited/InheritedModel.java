@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 @Model(adaptables = SlingHttpServletRequest.class)
 public class InheritedModel {
+
     @Inject
     private Page currentPage;
 
@@ -18,7 +19,6 @@ public class InheritedModel {
 
     private String path;
 
-
     @PostConstruct
     protected void init() {
         findNodePath();
@@ -26,19 +26,24 @@ public class InheritedModel {
 
     private void findNodePath() {
         Page page = currentPage;
-
-
-        while (page.getContentResource() != null && page.getContentResource().getChild(nodeName) == null && page.getParent() != null) {
+        Resource inheritedResource = null;
+        while (inheritedResource == null && page.getParent() != null) {
+            Resource content = page.getContentResource();
+            if (content != null) {
+                inheritedResource = page.getContentResource().getChild(nodeName);
+            }
             page = page.getParent();
         }
-
-        Resource content = page.getContentResource().getChild(nodeName);
-        if (content != null) {
-            path = content.getPath();
+        if (inheritedResource != null) {
+            path = inheritedResource.getPath();
         }
     }
 
     public String getPath() {
         return path;
+    }
+
+    public String getNodeName() {
+        return nodeName;
     }
 }
