@@ -18,6 +18,11 @@ import java.util.List;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class NavigationModel {
 
+    private static final String SIBLING = "sibling";
+    private static final String MANUAL_LINKS = "manualLinks";
+    private static final String TEXT = "text";
+    private static final String URL = "url";
+
     @Inject
     private PageManager pageManager;
 
@@ -37,13 +42,16 @@ public class NavigationModel {
 
     @PostConstruct
     protected void init() {
-        if ("sibling".equalsIgnoreCase(behavior)) {
+        if (SIBLING.equalsIgnoreCase(behavior)) {
             addLinks();
         } else {
-            resource.getChild("manualLinks").getChildren().forEach(child -> {
-                ValueMap valueMap = child.getValueMap();
-                links.add(new Link(valueMap.get("text", String.class), valueMap.get("url", String.class)));
-            });
+            Resource manualLinks = resource.getChild(MANUAL_LINKS);
+            if (manualLinks != null) {
+                manualLinks.getChildren().forEach(child -> {
+                    ValueMap valueMap = child.getValueMap();
+                    links.add(new Link(valueMap.get(TEXT, String.class), valueMap.get(URL, String.class)));
+                });
+            }
         }
     }
 
