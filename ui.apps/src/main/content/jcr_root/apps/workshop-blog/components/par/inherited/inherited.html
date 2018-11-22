@@ -1,0 +1,7 @@
+<template data-sly-template.inherited="${ @ nodeName}">
+    <sly data-sly-use.inh="${'eu.dynamicsolutions.core.components.inherited.InheritedModel' @ nodeName=nodeName}"
+         data-sly-test.isValid="${inh.path}" data-sly-resource="${inh.path @ wcmmode='disabled'}"/>
+    <div data-sly-test="${!isValid && wcmmode.edit}" class="alert alert-primary" role="alert">
+        ${inh.nodeName} expected within some ancestor of current page.
+    </div>
+</template>

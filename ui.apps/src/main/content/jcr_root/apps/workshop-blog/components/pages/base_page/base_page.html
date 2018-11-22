@@ -1,18 +1,38 @@
-<html>
+<!DOCTYPE HTML>
+<html data-sly-use.lib="templateLib.html" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>${pageProperties.jcr:title}</title>
+
     <sly data-sly-include="/libs/wcm/core/components/init/init.jsp"></sly>
-    <div data-sly-include="head.html"></div>
-    <div data-sly-use.libs="/libs/granite/sightly/templates/clientlib.html"></div>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <!--/*<link href="site/clean-blog.css" rel="stylesheet">*/-->
+    <sly data-sly-call="${clientlib.css @ categories='workshop-blog.base'}"></sly>
+    
 </head>
-<body>
+    <body>
 
-<div data-sly-include="header.html"></div>
-<div data-sly-include="navigation.html"></div>
-<div data-sly-include="content.html"></div>
-<div data-sly-include="footer.html"></div>
+        <div data-sly-include="navigation.html"></div>
+        <div data-sly-include="header.html"></div>
+        <div data-sly-include="content.html"></div>
+        <hr>
+        <div data-sly-include="footer.html"></div>
 
-<div data-sly-call="${libs.css @ categories='workshop-blog.base'}"></div>
-<div data-sly-call="${libs.js @ categories='workshop-blog.base'}"></div>
+        <!--/*<div data-sly-call="${lib.one @ title=properties.jcr:title, resource=resource.parent}"></div>
+        <div data-sly-call="${lib.two @ title='pierwsza strona', resource=resource}"></div>
 
-</body>
+        <sly data-sly-call="${clientlib.js @ categories='workshop-blog.base'}"></sly>*/-->
+        <sly data-sly-call="${clientlib.js @ categories='workshop-blog.base'}"></sly>
+    </body>
 </html>

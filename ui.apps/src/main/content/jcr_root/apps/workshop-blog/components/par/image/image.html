@@ -1,4 +1,8 @@
-<a href="${properties.link_path @ extension='html'}">
-    <img class="img-fluid" src="${properties.fileReference}" alt="${properties.link_label}">
+<div data-sly-test="${wcmmode.edit && !properties.caption}" class="alert alert-primary" role="alert">
+    Please configure the image.
+</div>
+
+<a href="${properties.linkpath @ extension='html'}">
+    <img class="img-fluid" src="${properties.fileReference}" alt="${properties.linklabel}">
 </a>
 <span class="caption text-muted">${properties.caption}</span>

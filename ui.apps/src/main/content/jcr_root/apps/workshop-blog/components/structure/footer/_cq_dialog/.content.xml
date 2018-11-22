@@ -47,7 +47,7 @@
                                                     <github
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="GitHub"
+                                                            fieldLabel="Github"
                                                             name="./github"/>
                                                 </items>
                                             </links>
@@ -59,7 +59,7 @@
                                                     <footertext
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="FooterText"
+                                                            fieldLabel="Footertext"
                                                             name="./footertext"/>
                                                 </items>
                                             </text>

@@ -1,2 +1,4 @@
-<p data-sly-test="${!properties.text}">Empty text.</p>
+<div data-sly-test="${wcmmode.edit && !properties.text}" class="alert alert-primary" role="alert">
+    Please configure the text.
+</div>
 ${properties.text @ context='html'}
