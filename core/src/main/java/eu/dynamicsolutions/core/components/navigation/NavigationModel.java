@@ -3,6 +3,8 @@ package eu.dynamicsolutions.core.components.navigation;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
@@ -19,6 +21,9 @@ public class NavigationModel {
     @Inject
     private PageManager pageManager;
 
+    @Inject
+    private Resource resource;
+
     @ValueMapValue
     @Optional
     @Named("mainlink")
@@ -34,6 +39,11 @@ public class NavigationModel {
     protected void init() {
         if ("sibling".equalsIgnoreCase(behavior)) {
             addLinks();
+        } else {
+            resource.getChild("manualLinks").getChildren().forEach(child -> {
+                ValueMap valueMap = child.getValueMap();
+                links.add(new Link(valueMap.get("text", String.class), valueMap.get("url", String.class)));
+            });
         }
     }
 

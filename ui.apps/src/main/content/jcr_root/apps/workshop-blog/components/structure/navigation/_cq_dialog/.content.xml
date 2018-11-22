@@ -68,7 +68,7 @@
                                                     name="./multifieldlinks"
                                                     composite="{Boolean}true">
                                                 <field sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                       jcr:primaryType="nt:unstructured" name="./links">
+                                                       jcr:primaryType="nt:unstructured" name="./manualLinks">
                                                     <items jcr:primaryType="nt:unstructured">
                                                         <text
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
