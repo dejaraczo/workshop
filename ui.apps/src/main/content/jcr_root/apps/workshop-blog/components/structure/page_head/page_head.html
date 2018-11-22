@@ -1,0 +1,16 @@
+<header class="masthead" style="background-image: url('${properties.fileReference @ context='styleString'}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <!--/*<h1>Man must explore, and this is exploration at its greatest</h1>*/-->
+                    <h1>${pageProperties.jcr:title}</h1>
+                    <h2>${pageProperties.jcr:description}</h2>
+                    <!--/*<h2 class="subheading">Problems look mighty small from 150 miles up</h2>*/-->
+                    <sly data-sly-include="details.html"></sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

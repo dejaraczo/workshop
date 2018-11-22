@@ -1,0 +1,8 @@
+<template data-sly-template.one>blah</template>
+
+<template data-sly-template.two="${@ title, resource='The resource of the parent node'}"> <!--/* Notice the usage hint on the resource parameter. */-->
+    <h1>${title}</h1>
+    <p>Parent: ${resource.name}</p>
+</template>
+
+

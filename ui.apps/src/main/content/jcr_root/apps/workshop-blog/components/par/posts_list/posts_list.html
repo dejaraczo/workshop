@@ -1,0 +1,19 @@
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div data-sly-repeat.child="${currentPage.listChildren}" class="post-preview">
+                <a href="${child.path @ extension='html'}">
+                    <h2 class="post-title">
+                        ${child.title}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        ${child.description}
+                    </h3>
+                </a>
+                <p class="post-meta">Posted on ${child.contentResource.valueMap['jsr:content']}</p>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
