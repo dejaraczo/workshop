@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
           jcr:title="Navigation"
@@ -61,6 +61,28 @@
                                                     />
                                                 </items>
                                             </behavior>
+                                            <multifieldlinks
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    fieldLabel="Manual items"
+                                                    name="./multifieldlinks"
+                                                    composite="{Boolean}true">
+                                                <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                       jcr:primaryType="nt:unstructured" name="./links">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Link Text"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                name="./text"/>
+                                                        <url
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldLabel="Link Url"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                name="./url"/>
+                                                    </items>
+                                                </field>
+                                            </multifieldlinks>
                                         </items>
                                     </column>
                                 </items>
