@@ -14,7 +14,7 @@ import static org.apache.sling.api.servlets.ServletResolverConstants.*;
 @Component(
         service = {Servlet.class},
         property = {
-                SLING_SERVLET_RESOURCE_TYPES + "workshop-blog/components/par/contactform",
+                SLING_SERVLET_RESOURCE_TYPES + "=workshop-blog/components/par/contactform",
                 SLING_SERVLET_METHODS + "=POST",
                 SLING_SERVLET_EXTENSIONS + "=json",
                 SLING_SERVLET_SELECTORS + "=contactdata"
@@ -24,6 +24,6 @@ public class ContactFormServlet extends SlingAllMethodsServlet {
 
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        super.doPost(request, response);
+        System.out.println("Hello World");
     }
 }
