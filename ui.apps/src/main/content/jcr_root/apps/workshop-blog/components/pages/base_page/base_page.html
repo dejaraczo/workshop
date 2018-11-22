@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html data-sly-use.cl="headlibs.html">
+<head>
+    <sly data-sly-include="/libs/wcm/core/components/init/init.jsp"></sly>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+</head>
+<body >
+<div data-sly-call="${cl.css}"></div>
+
+<sly data-sly-include="nav.html"></sly>
+<sly data-sly-include="pagehead.html"></sly>
+<sly data-sly-include="content.html"></sly>
+<sly data-sly-include="footer.html"></sly>
+
+<div data-sly-call="${cl.js}"></div>
+</body>
+</html>

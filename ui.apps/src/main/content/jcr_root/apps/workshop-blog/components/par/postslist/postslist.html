@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview" data-sly-repeat="${currentPage.listChildren}">
+            <a href="post.html">
+                <h2 class="post-title">
+                    ${item.title}
+                </h2>
+                <h3 class="post-subtitle">
+                    ${item.description}
+                </h3>
+            </a>
+            <p class="post-meta">Posted by
+                <a href="#">${properties.jcr:createdBy}</a>
+                on  ${'EEEE, d MMM y' @ format=item.jcr:created, timezone='Europe/Warsaw'}</p>
+        </div>
+
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+    </div>
+</div>
